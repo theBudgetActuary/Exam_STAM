@@ -5,7 +5,7 @@ output: html_notebook
 
 Chapter 5
 
-Coninuous Models
+Continuous Models
 
 Random variables can be mixed by an uncountable number of random variables instead of a finite number. The variance would then be $E(X^{2})-[E(X)]^{2}$ = $E[Var(X|\wedge)]+Var[E(X|\wedge)]$
 
