@@ -1,0 +1,20 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+Chapter 5
+
+Coninuous Models
+
+Random variables can be mixed by an uncountable number of random variables instead of a finite number. The variance would then be $E(X^{2})-[E(X)]^{2}$ = $E[Var(X|\wedge)]+Var[E(X|\wedge)]$
+
+Continuous mixtures are often used to provide a model when the exact value of a paramter is not known but a probability density function can be elucidated to describe possible values of that parameter. Example would be the miles a person drives in a year represents one distribution. The miles a driver drives in different years follows a different distribution.
+
+__Frailty Model:__
+
+useful way to generate new distributions by mixing. 
+
+__Splicing:__
+
+With mixing, the various processes operate on subsets of the population. Once the subset is identified, a simple loss model suffices. For splicing, the processes differ with regard to the loss amount. One model governs the behavior of losses in some interval of possible losses while other models cover the other intervals. Reason to use: the trail behavior may be inconsistent with the behavior for small losses or when there is a large amount of data below some value but a limited amount of information elsewhere.

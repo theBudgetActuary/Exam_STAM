@@ -1,0 +1,42 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+Chapter 4
+
+Model specification:
+
+Models are specified by how many parameters are needed for the complexity of the model. 
+
+Arguments for a simple model:
+
+with few items required in its specification, it is more likely that each item can be determined more accurately. It is more likely to be stable across time and settings (if a model does well today it is likely to do well tomorrow or in similar situation). A simple model moden can provide necessary smoothing to irregular data.
+
+complex model advantages:
+
+A complex model can more closely match reality. It can more closely match irregularities in the data.
+
+parsimony- the simplest model that adequately reflects reality should be used.
+
+scale distribution- a parametric distribution is a scale distribution if when a random variable from that set of distriubtions is multiplied by a positive constant, the resulting random variable is also in that set of distributions. 
+
+scale parameter- when a member of the scale distribution is multiplied by a positive constant, the scale parameter is multiplied by the same constant. Second, when a member of the scale distribution is multiplied by a positive constant, all other parameters are unchanged. 
+
+__Parametric distribution family:__
+
+Parametric distribution family- a set of parametric distributions that are related in some meaningful way. One type of parametric distribution family is bases on a specified parametric distribution. Other types are obtained by setting one of the parameters from the specified distribution equal to a preset value or to each other. 
+
+Transformed beta distribution- has four parameters. Each other named distributions in that family have certain parameters set equal to 1 or each other. 
+
+__Finite Mixture Distributions:__
+
+Motivation for mixing is that the underlying distribution may be several phenomena that occur with unknown probabilities. For example, dental claim could be checkup, filling, repair, or surgical procedure. Because of differing modes a mixture model can be used.
+
+If we do not know how distribution should be used in the mixture, the value of k (number of distributions) becomes a parameter. It can be represented as a variable-component mixture distribution which is semi parametric because in complexity they are between parametric and nonparametric models. 
+
+__Data Dependent Models:__
+
+Data dependent models are non-parametric. An example is the empirical model where each observation contributed 1/n to probability function.
+
+Another example is the kernel smoothing model where each data point is replaced with a continuous density function with area 1/n. 

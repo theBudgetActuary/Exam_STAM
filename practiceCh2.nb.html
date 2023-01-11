@@ -1752,189 +1752,58 @@ display: none;
 
 
 <!-- rnb-text-begin -->
-<div id="ch1-book" class="section level1">
-<h1>CH1 Book:</h1>
-<p><strong>Continuous:</strong></p>
-<p>cumulative distribution function = distribution function = F(x) =
-P(X&lt;x) Probability that x is less than for equal to a specific
-number.</p>
-<p>Survival function = <span class="math inline">\(S_{x}X\)</span> =
-1-F(x) = the probability that x is greater than a specific number.</p>
-<p>pdf = f(x) = derivative of the cumulative function, or the negative
-of the derivative of the survival function. Values with higher pdfs are
-more likely to occur than values with lower pdfs.</p>
-<p>F(b)=<span class="math inline">\(\int_{-\infty}^{b}\)</span>, S(b) =
-<span class="math inline">\(\int_{b}^{\infty}\)</span></p>
-<p><strong>Discrete:</strong></p>
-<p>pmf = <span class="math inline">\(p_{x}x\)</span> = probability at a
-distinct point when it is not zero, used for discrete data.</p>
-<p>F(x) = <span class="math inline">\(\sum_{y \le x} p(y)\)</span> and
-<span class="math inline">\(S(x)=\sum_{y&gt;x} p(y)\)</span></p>
-<p><strong>Hazard Rate:</strong></p>
-<p>hazard rate = force of mortality = <span class="math inline">\(h_{x}x\)</span> = is the ratio of the density and
-survival function = <span class="math inline">\(f_{x}(x)/S_{x}(x)\)</span> Interpreted as the
-probability density at x given that the argument will be at least x.</p>
-<p><span class="math inline">\(S(b) =
-e^{-\int_{0}^{b}h(x)dx}\)</span></p>
-<p><span class="math inline">\(h_{x}(x) = -S&#39;(x)/S(x)=-d\
-lnS(x)/dx\)</span></p>
-<p><strong>Moments:</strong></p>
-<p>The kth raw moment of a random variable is the expected average value
-of the kth power of that variable, provided that it exists. <span class="math inline">\(E(X^{k})\)</span></p>
-<p>continuous: <span class="math inline">\(\mu&#39;_{k}\)</span>=<span class="math inline">\(E(X^{k})\)</span>=<span class="math inline">\(\int_{-\infty}^{\infty}x^{k}f(x)dx\)</span></p>
-<p>discrete: <span class="math inline">\(\sum_{j}
-x^{k}_{j}p(x_{j})\)</span></p>
-<p>kth central moment = expected value of the kth power of the standard
-deviation of the variable from its mean. <span class="math inline">\(E[(X-\mu)^{k}]\)</span></p>
-<p>Second central moment = variance, Ratio of the standard deviation to
-the mean = coefficient of variation = <span class="math inline">\(\frac{\sigma}{\mu}\)</span></p>
-<p>Ratio of the third central moment to the cube of the standard
-deviation is the skewness = <span class="math inline">\(y_{1}=\mu_{3}/\sigma^{3}\)</span></p>
-<p>Ratio of the fourth central moment to fourth power of the standard
-deviation is kurtosis = <span class="math inline">\(y_{2}=\mu_{4}/\sigma^{4}\)</span></p>
-<p>calculating</p>
-<p>continuous: <span class="math inline">\(\int_{-\infty}^{\infty}(x-\mu)^{k}f(x)dx\)</span></p>
-<p>discrete: <span class="math inline">\(\sum_{j}(x_{j}-\mu)^{k}p(x_{j})\)</span></p>
-<p><strong>Excess Loss Variable:</strong></p>
-<p>left truncated and shifted variable</p>
-<p>mean excess loss function is a given value of x, given that it is
-greater than d. <span class="math inline">\(e_{x}(d)=e(d)=E(Y^{p})=E(X-d|X&gt;d)\)</span> Also
-called mean residual life function or left truncated and shifted
-variable. Left truncated because any value below d is not observed,
-shifted because d is subtracted from the remaining values.</p>
-<p>continuous: <span class="math inline">\(e^{k}_{x}(d)=\frac{\int_{d}^{\infty}(x-d)^{k}f(x)dx}{1-F(d)}\)</span></p>
-<p>discrete: <span class="math inline">\(\frac{\sum_{x_{j}&gt;d}(x_{j}-d)^{k}p(x_{j})}{1-F(d)}\)</span></p>
-<p><strong>left censored and shifted variable:</strong></p>
-<p><span class="math inline">\(Y^{L}=(X-d)_{+}=\)</span> 0 if <span class="math inline">\(X\le d\)</span>, X-d if <span class="math inline">\(X&gt;d\)</span></p>
-<p>values below d are not ignored but are set equal to 0. In the left
-truncated and shifted variable it is per payment where the variable
-exists only when a payment is made. In left censored and shifted it is a
-per loss which takes on the value 0 whenever a loss produces no
-payment.</p>
-<p>continuous: <span class="math inline">\(E[(X-d)^{k}_{+}]=\int_{d}^{\infty}(x-d)^{k}f(x)dx\)</span></p>
-<p>discrete: <span class="math inline">\(\sum_{x_{j}&gt;d}(x_{j}-d)^{k}p(x_{j})\)</span></p>
-<p><strong>limited loss variable:</strong></p>
-<p>right censored variable</p>
-<p><span class="math inline">\(Y=X \wedge u\)</span>= X if <span class="math inline">\(X&lt;u\)</span>, u if <span class="math inline">\(X\ge u\)</span></p>
-<p>It is right censored because values above u are set equal to u. It is
-a policy limit that sets a maximum on the benefit to be paid.</p>
-<p>Deductible and policy limit at the same price is the same as full
-coverage. <span class="math inline">\((X-d)_{+} + (X \wedge
-d)=X\)</span></p>
-<p>continuous: <span class="math inline">\(E[(X \wedge
-u)^{k}]=\int_{-\infty}^{u} x^{k}f(x)dx+u^{k}[1-F(u)]\)</span></p>
-<p>discrete: <span class="math inline">\(E[(X \wedge
-u)^{k}]=\sum_{x_{j}\le u} x^{k}_{j}p(x_{j})+u^{k}[1-F(u)]\)</span></p>
-<p><strong>Percentiles:</strong></p>
-<p>The percentile function is the inverse of the distribution function.
-Quantile uses values between 0 and 1, percentile uses values between 0
-and 100. 70th percentile = .7 quantile.</p>
-<p>Only time it is not defined is when the distribution function is
-constant at a value of p over a range of values of the random
-variable.</p>
-<p>50th percentile = <span class="math inline">\(\pi_{.5}\)</span> =
-median</p>
-<p><strong>Generating Functions and Sums of Random
-Variable:</strong></p>
-<p>If <span class="math inline">\(S_{k}\)</span> is a random variable
-which represents the sum of all claims then:</p>
-<p><span class="math inline">\(E(S_{K})\)</span>=<span class="math inline">\(E(X_{1})+E(X_{2})+...+E(X_{k})\)</span></p>
-<p>if <span class="math inline">\(X_{1}...X_{k}\)</span> are
-independent, <span class="math inline">\(Var(S_{k})=Var(X_{1})+Var(X_{2})+...+Var(X_{k})\)</span></p>
-<p>if <span class="math inline">\(X_{1}...X_{k}\)</span> are independent
-and their first two moments meet certain conditions, <span class="math inline">\(lim_{k \to
-\infty}[S_{k}-E(S_{k})]/\sqrt{Var(S_{k})}\)</span> has a normal
-distribution with mean 0 and variance 1.</p>
-<p>When working with a sequence of random variables the limit used in
-the theorem is called the convergence in distribution. Probabilities of
-sums of random variables can often be approximated by those from the
-normal distribution.</p>
-<p><strong>Moment Generating Function:</strong></p>
-<p>MGF = <span class="math inline">\(M_{x}(z)=E(e^{zX})\)</span> for all
-z for which the expected value exists.</p>
-<p>Probability generating function, pgf=<span class="math inline">\(P_{X}(z)=E(z^{X})\)</span> for all z for which the
-expectation exists</p>
-<p><span class="math inline">\(M_{x}(z)=P_{x}(e^{z})\)</span> and <span class="math inline">\(P_{x}(z)=M_{x}(ln\ z)\)</span></p>
-<p>Often the mgf is used for continuous random variables, and the pgf
-for discrete random variables. Two random variables with different
-distribution functions cannot have the same mgf or pgf. The following
-aid works with sums of random variables. There is a one to one
-correspondence between a random variable’s distribution function and its
-mgf and pgf.</p>
-<p><strong>Combining them for <span class="math inline">\(S_{k}\)</span>:</strong></p>
-<p>if <span class="math inline">\(S_{k}=x_{1}+...+x_{k}\)</span> where
-x’s are independent and random variables then:</p>
-<p><span class="math inline">\(M_{s_{k}}(z)=\Pi_{j=1}^{k}M_{X_{j}}(z)\)</span>
-and <span class="math inline">\(P_{s_{k}}(z)=\Pi_{j=1}^{k}P_{X_{j}}(z)\)</span></p>
-<p><span class="math inline">\(M_{s_{k}}(z)=E(e^{zS_{k}})=E(e^{z(x1+x2+...+x_{z})})\)</span></p>
-<p><strong>Tails:</strong></p>
-<p>If all positive moments exist then it is an indication of a light
-right tail. If only positive moments up to a certain point exist then it
-is evidence of a heavy right tail.</p>
-<p>If a distribution does not have all its positive moments, then it
-does not have a MGF. If a distribution has all its positive moments, it
-still might not have a mgf.</p>
-<p>To check which distribution has a heavier tail when they have the
-same mean is to use the ratio of the two survival functions as they
-approach infinity. Can also use density functions instead of survival
-functions.</p>
-<p>Distributions with decreasing hazard rate functions have heavy tails.
-Distributions with increasing hazard rate functions have light tails. A
-distribution has a lighter tail than another is its hazard rate function
-is increasing at a faster rate.</p>
-<p>If the mean excess loss function is increasing in d, the distribution
-is considered a heavy tail. If the mean excess loss function is
-decreasing in d, it is considered to have a light tail.</p>
-<p><strong>Measures of Risk:</strong></p>
-<p>key risk indicators- level of risk, often described by one
-number.</p>
-<p>Value at Risk (VaR)- a quantile of the distribution of aggregate
-losses.</p>
-<p>Tail Value at Risk (TVaR)- more informative and useful measure of
-VaR.</p>
-<p>risk measure- gives a single number that is intended to quantify the
-risk exposure. Denoted <span class="math inline">\(\rho(X)\)</span>. It
-is the amount of assets required to protect against adverse outcomes of
-risk X.</p>
-<p>Coherent Risk Measure: has the following properties for two loss
-random variables</p>
-<ol style="list-style-type: decimal">
-<li><p>Subadditivity: <span class="math inline">\(\rho(X+Y)\le \rho(x) +
-\rho(y)\)</span></p></li>
-<li><p>Monotonicity: if X&lt;Y for all possible outcomes, then <span class="math inline">\(\rho(X)\le \rho(Y)\)</span></p></li>
-<li><p>Positive Homogeneity: for any positive constant c, <span class="math inline">\(\rho(cX)=c\rho (X)\)</span></p></li>
-<li><p>Translation Invariance: for any constant c, <span class="math inline">\(\rho (X+c)=\rho (X)+c\)</span></p></li>
-</ol>
-<p>Subadditivity states that two risks combined will not be greater than
-for the risks treated separately, there should be some diversification
-benefit from combining risks. Monotonicity means that if one risk always
-has greater losses than another risk under all circumstances, the risk
-measure (capital required to support it) should always be greater.
-Positive homogeneity means that the risk measure and capital required to
-support it is independent of the currency in which the risk is measured.
-Doubling the exposure to a particular risk requires double the capital,
-no diversification benefit. Translation invariance means that there is
-no additional risk (capital required to support it) for an additional
-risk for which there is not additional uncertainty.</p>
-<p>VaR- Is not coherent because it does not cover subadditivity. It is
-the threshold percentage that the company can cover all possible loses.
-For a 95% quantile of VaR there is only a 5% chance of lossed exceeding
-the VaR value.</p>
-<p>VaR is used extensively in financial risk management of trading risk
-over a fixed (usually relatively short) time period. If distributions of
-gains or losses are restricted to the normal distribution then VaR is
-coherent. However, the normal distribution is generally not used for
-describing insurance losses.</p>
-<p>TVaR- Is coherent- the average of all VaR values above the security
-level p.</p>
-<p><span class="math inline">\(TVaR_{p}(X)=\frac{\int_{p}^{1}VaR_{u}(X)du}{1-p}\)</span></p>
-<p>or <span class="math inline">\(VaR_{p}(X)+e(\pi _{p})\)</span></p>
-<p>-<span class="math inline">\(e(\pi _{p})\)</span> = mean excess loss
-function</p>
+<p>Chapter 4</p>
+<p>Model specification:</p>
+<p>Models are specified by how many parameters are needed for the
+complexity of the model.</p>
+<p>Arguments for a simple model:</p>
+<p>with few items required in its specification, it is more likely that
+each item can be determined more accurately. It is more likely to be
+stable across time and settings (if a model does well today it is likely
+to do well tomorrow or in similar situation). A simple model moden can
+provide necessary smoothing to irregular data.</p>
+<p>complex model advantages:</p>
+<p>A complex model can more closely match reality. It can more closely
+match irregularities in the data.</p>
+<p>parsimony- the simplest model that adequately reflects reality should
+be used.</p>
+<p>scale distribution- a parametric distribution is a scale distribution
+if when a random variable from that set of distriubtions is multiplied
+by a positive constant, the resulting random variable is also in that
+set of distributions.</p>
+<p>scale parameter- when a member of the scale distribution is
+multiplied by a positive constant, the scale parameter is multiplied by
+the same constant. Second, when a member of the scale distribution is
+multiplied by a positive constant, all other parameters are
+unchanged.</p>
+<p><strong>Parametric distribution family:</strong></p>
+<p>Parametric distribution family- a set of parametric distributions
+that are related in some meaningful way. One type of parametric
+distribution family is bases on a specified parametric distribution.
+Other types are obtained by setting one of the parameters from the
+specified distribution equal to a preset value or to each other.</p>
+<p>Transformed beta distribution- has four parameters. Each other named
+distributions in that family have certain parameters set equal to 1 or
+each other.</p>
+<p><strong>Finite Mixture Distributions:</strong></p>
+<p>Motivation for mixing is that the underlying distribution may be
+several phenomena that occur with unknown probabilities. For example,
+dental claim could be checkup, filling, repair, or surgical procedure.
+Because of differing modes a mixture model can be used.</p>
+<p>If we do not know how distribution should be used in the mixture, the
+value of k (number of distributions) becomes a parameter. It can be
+represented as a variable-component mixture distribution which is semi
+parametric because in complexity they are between parametric and
+nonparametric models.</p>
+<p><strong>Data Dependent Models:</strong></p>
+<p>Data dependent models are non-parametric. An example is the empirical
+model where each observation contributed 1/n to probability
+function.</p>
+<p>Another example is the kernel smoothing model where each data point
+is replaced with a continuous density function with area 1/n. </p>
 <!-- rnb-text-end -->
-</div>
 
-<div id="rmd-source-code">LS0tDQp0aXRsZTogIlIgTm90ZWJvb2siDQpvdXRwdXQ6IGh0bWxfbm90ZWJvb2sNCi0tLQ0KDQojIENIMSBCb29rOg0KDQpfX0NvbnRpbnVvdXM6X18NCg0KY3VtdWxhdGl2ZSBkaXN0cmlidXRpb24gZnVuY3Rpb24gPSBkaXN0cmlidXRpb24gZnVuY3Rpb24gPSBGKHgpID0gUChYPHgpIFByb2JhYmlsaXR5IHRoYXQgeCBpcyBsZXNzIHRoYW4gZm9yIGVxdWFsIHRvIGEgc3BlY2lmaWMgbnVtYmVyLg0KDQoNClN1cnZpdmFsIGZ1bmN0aW9uID0gJFNfe3h9WCQgPSAxLUYoeCkgPSB0aGUgcHJvYmFiaWxpdHkgdGhhdCB4IGlzIGdyZWF0ZXIgdGhhbiBhIHNwZWNpZmljIG51bWJlci4NCg0KcGRmID0gZih4KSA9IGRlcml2YXRpdmUgb2YgdGhlIGN1bXVsYXRpdmUgZnVuY3Rpb24sIG9yIHRoZSBuZWdhdGl2ZSBvZiB0aGUgZGVyaXZhdGl2ZSBvZiB0aGUgc3Vydml2YWwgZnVuY3Rpb24uIFZhbHVlcyB3aXRoIGhpZ2hlciBwZGZzIGFyZSBtb3JlIGxpa2VseSB0byBvY2N1ciB0aGFuIHZhbHVlcyB3aXRoIGxvd2VyIHBkZnMuIA0KDQpGKGIpPSRcaW50X3stXGluZnR5fV57Yn0kLCBTKGIpID0gJFxpbnRfe2J9XntcaW5mdHl9JA0KDQpfX0Rpc2NyZXRlOl9fDQoNCnBtZiA9ICRwX3t4fXgkID0gcHJvYmFiaWxpdHkgYXQgYSBkaXN0aW5jdCBwb2ludCB3aGVuIGl0IGlzIG5vdCB6ZXJvLCB1c2VkIGZvciBkaXNjcmV0ZSBkYXRhLg0KDQpGKHgpID0gJFxzdW1fe3kgXGxlIHh9IHAoeSkkIGFuZCAkUyh4KT1cc3VtX3t5Pnh9IHAoeSkkDQoNCl9fSGF6YXJkIFJhdGU6X18NCg0KaGF6YXJkIHJhdGUgPSBmb3JjZSBvZiBtb3J0YWxpdHkgPSAkaF97eH14JCA9IGlzIHRoZSByYXRpbyBvZiB0aGUgZGVuc2l0eSBhbmQgc3Vydml2YWwgZnVuY3Rpb24gPSAkZl97eH0oeCkvU197eH0oeCkkIEludGVycHJldGVkIGFzIHRoZSBwcm9iYWJpbGl0eSBkZW5zaXR5IGF0IHggZ2l2ZW4gdGhhdCB0aGUgYXJndW1lbnQgd2lsbCBiZSBhdCBsZWFzdCB4Lg0KDQokUyhiKSA9IGVeey1caW50X3swfV57Yn1oKHgpZHh9JA0KDQokaF97eH0oeCkgPSAtUycoeCkvUyh4KT0tZFwgbG5TKHgpL2R4JA0KDQpfX01vbWVudHM6X18NCg0KVGhlIGt0aCByYXcgbW9tZW50IG9mIGEgcmFuZG9tIHZhcmlhYmxlIGlzIHRoZSBleHBlY3RlZCBhdmVyYWdlIHZhbHVlIG9mIHRoZSBrdGggcG93ZXIgb2YgdGhhdCB2YXJpYWJsZSwgcHJvdmlkZWQgdGhhdCBpdCBleGlzdHMuICRFKFhee2t9KSQNCg0KY29udGludW91czogJFxtdSdfe2t9JD0kRShYXntrfSkkPSRcaW50X3stXGluZnR5fV57XGluZnR5fXhee2t9Zih4KWR4JA0KDQpkaXNjcmV0ZTogJFxzdW1fe2p9IHhee2t9X3tqfXAoeF97an0pJA0KDQprdGggY2VudHJhbCBtb21lbnQgPSBleHBlY3RlZCB2YWx1ZSBvZiB0aGUga3RoIHBvd2VyIG9mIHRoZSBzdGFuZGFyZCBkZXZpYXRpb24gb2YgdGhlIHZhcmlhYmxlIGZyb20gaXRzIG1lYW4uIA0KJEVbKFgtXG11KV57a31dJA0KDQpTZWNvbmQgY2VudHJhbCBtb21lbnQgPSB2YXJpYW5jZSwgUmF0aW8gb2YgdGhlIHN0YW5kYXJkIGRldmlhdGlvbiB0byB0aGUgbWVhbiA9IGNvZWZmaWNpZW50IG9mIHZhcmlhdGlvbiA9ICRcZnJhY3tcc2lnbWF9e1xtdX0kDQoNClJhdGlvIG9mIHRoZSB0aGlyZCBjZW50cmFsIG1vbWVudCB0byB0aGUgY3ViZSBvZiB0aGUgc3RhbmRhcmQgZGV2aWF0aW9uIGlzIHRoZSBza2V3bmVzcyA9ICR5X3sxfT1cbXVfezN9L1xzaWdtYV57M30kDQoNClJhdGlvIG9mIHRoZSBmb3VydGggY2VudHJhbCBtb21lbnQgdG8gZm91cnRoIHBvd2VyIG9mIHRoZSBzdGFuZGFyZCBkZXZpYXRpb24gaXMga3VydG9zaXMgPSAkeV97Mn09XG11X3s0fS9cc2lnbWFeezR9JA0KDQpjYWxjdWxhdGluZw0KDQpjb250aW51b3VzOiAkXGludF97LVxpbmZ0eX1ee1xpbmZ0eX0oeC1cbXUpXntrfWYoeClkeCQNCg0KZGlzY3JldGU6ICRcc3VtX3tqfSh4X3tqfS1cbXUpXntrfXAoeF97an0pJA0KDQpfX0V4Y2VzcyBMb3NzIFZhcmlhYmxlOl9fDQoNCmxlZnQgdHJ1bmNhdGVkIGFuZCBzaGlmdGVkIHZhcmlhYmxlDQoNCm1lYW4gZXhjZXNzIGxvc3MgZnVuY3Rpb24gaXMgYSBnaXZlbiB2YWx1ZSBvZiB4LCBnaXZlbiB0aGF0IGl0IGlzIGdyZWF0ZXIgdGhhbiBkLiAkZV97eH0oZCk9ZShkKT1FKFlee3B9KT1FKFgtZHxYPmQpJCBBbHNvIGNhbGxlZCBtZWFuIHJlc2lkdWFsIGxpZmUgZnVuY3Rpb24gb3IgbGVmdCB0cnVuY2F0ZWQgYW5kIHNoaWZ0ZWQgdmFyaWFibGUuIExlZnQgdHJ1bmNhdGVkIGJlY2F1c2UgYW55IHZhbHVlIGJlbG93IGQgaXMgbm90IG9ic2VydmVkLCBzaGlmdGVkIGJlY2F1c2UgZCBpcyBzdWJ0cmFjdGVkIGZyb20gdGhlIHJlbWFpbmluZyB2YWx1ZXMuIA0KDQpjb250aW51b3VzOiAkZV57a31fe3h9KGQpPVxmcmFje1xpbnRfe2R9XntcaW5mdHl9KHgtZClee2t9Zih4KWR4fXsxLUYoZCl9JA0KDQpkaXNjcmV0ZTogJFxmcmFje1xzdW1fe3hfe2p9PmR9KHhfe2p9LWQpXntrfXAoeF97an0pfXsxLUYoZCl9JA0KDQoNCl9fbGVmdCBjZW5zb3JlZCBhbmQgc2hpZnRlZCB2YXJpYWJsZTpfXw0KDQokWV57TH09KFgtZClfeyt9PSQgMCBpZiAkWFxsZSBkJCwgWC1kIGlmICRYPmQkDQoNCnZhbHVlcyBiZWxvdyBkIGFyZSBub3QgaWdub3JlZCBidXQgYXJlIHNldCBlcXVhbCB0byAwLiBJbiB0aGUgbGVmdCB0cnVuY2F0ZWQgYW5kIHNoaWZ0ZWQgdmFyaWFibGUgaXQgaXMgcGVyIHBheW1lbnQgd2hlcmUgdGhlIHZhcmlhYmxlIGV4aXN0cyBvbmx5IHdoZW4gYSBwYXltZW50IGlzIG1hZGUuIEluIGxlZnQgY2Vuc29yZWQgYW5kIHNoaWZ0ZWQgaXQgaXMgYSBwZXIgbG9zcyB3aGljaCB0YWtlcyBvbiB0aGUgdmFsdWUgMCB3aGVuZXZlciBhIGxvc3MgcHJvZHVjZXMgbm8gcGF5bWVudC4gDQoNCmNvbnRpbnVvdXM6ICRFWyhYLWQpXntrfV97K31dPVxpbnRfe2R9XntcaW5mdHl9KHgtZClee2t9Zih4KWR4JA0KDQpkaXNjcmV0ZTogJFxzdW1fe3hfe2p9PmR9KHhfe2p9LWQpXntrfXAoeF97an0pJA0KDQoNCl9fbGltaXRlZCBsb3NzIHZhcmlhYmxlOl9fDQoNCnJpZ2h0IGNlbnNvcmVkIHZhcmlhYmxlDQoNCiRZPVggXHdlZGdlIHUkPSBYIGlmICRYPHUkLCB1IGlmICRYXGdlIHUkDQoNCkl0IGlzIHJpZ2h0IGNlbnNvcmVkIGJlY2F1c2UgdmFsdWVzIGFib3ZlIHUgYXJlIHNldCBlcXVhbCB0byB1LiBJdCBpcyBhIHBvbGljeSBsaW1pdCB0aGF0IHNldHMgYSBtYXhpbXVtIG9uIHRoZSBiZW5lZml0IHRvIGJlIHBhaWQuIA0KDQpEZWR1Y3RpYmxlIGFuZCBwb2xpY3kgbGltaXQgYXQgdGhlIHNhbWUgcHJpY2UgaXMgdGhlIHNhbWUgYXMgZnVsbCBjb3ZlcmFnZS4gJChYLWQpX3srfSArIChYIFx3ZWRnZSBkKT1YJA0KDQpjb250aW51b3VzOiAkRVsoWCBcd2VkZ2UgdSlee2t9XT1caW50X3stXGluZnR5fV57dX0geF57a31mKHgpZHgrdV57a31bMS1GKHUpXSQNCg0KZGlzY3JldGU6ICRFWyhYIFx3ZWRnZSB1KV57a31dPVxzdW1fe3hfe2p9XGxlIHV9IHhee2t9X3tqfXAoeF97an0pK3Vee2t9WzEtRih1KV0kDQoNCl9fUGVyY2VudGlsZXM6X18NCg0KVGhlIHBlcmNlbnRpbGUgZnVuY3Rpb24gaXMgdGhlIGludmVyc2Ugb2YgdGhlIGRpc3RyaWJ1dGlvbiBmdW5jdGlvbi4gUXVhbnRpbGUgdXNlcyB2YWx1ZXMgYmV0d2VlbiAwIGFuZCAxLCBwZXJjZW50aWxlIHVzZXMgdmFsdWVzIGJldHdlZW4gMCBhbmQgMTAwLiA3MHRoIHBlcmNlbnRpbGUgPSAuNyBxdWFudGlsZS4NCg0KT25seSB0aW1lIGl0IGlzIG5vdCBkZWZpbmVkIGlzIHdoZW4gdGhlIGRpc3RyaWJ1dGlvbiBmdW5jdGlvbiBpcyBjb25zdGFudCBhdCBhIHZhbHVlIG9mIHAgb3ZlciBhIHJhbmdlIG9mIHZhbHVlcyBvZiB0aGUgcmFuZG9tIHZhcmlhYmxlLg0KDQo1MHRoIHBlcmNlbnRpbGUgPSAkXHBpX3suNX0kID0gbWVkaWFuDQoNCg0KX19HZW5lcmF0aW5nIEZ1bmN0aW9ucyBhbmQgU3VtcyBvZiBSYW5kb20gVmFyaWFibGU6X18NCg0KSWYgJFNfe2t9JCBpcyBhIHJhbmRvbSB2YXJpYWJsZSB3aGljaCByZXByZXNlbnRzIHRoZSBzdW0gb2YgYWxsIGNsYWltcyB0aGVuOg0KDQokRShTX3tLfSkkPSRFKFhfezF9KStFKFhfezJ9KSsuLi4rRShYX3trfSkkDQoNCmlmICRYX3sxfS4uLlhfe2t9JCBhcmUgaW5kZXBlbmRlbnQsICRWYXIoU197a30pPVZhcihYX3sxfSkrVmFyKFhfezJ9KSsuLi4rVmFyKFhfe2t9KSQNCg0KaWYgJFhfezF9Li4uWF97a30kIGFyZSBpbmRlcGVuZGVudCBhbmQgdGhlaXIgZmlyc3QgdHdvIG1vbWVudHMgbWVldCBjZXJ0YWluIGNvbmRpdGlvbnMsICRsaW1fe2sgXHRvIFxpbmZ0eX1bU197a30tRShTX3trfSldL1xzcXJ0e1ZhcihTX3trfSl9JCBoYXMgYSBub3JtYWwgZGlzdHJpYnV0aW9uIHdpdGggbWVhbiAwIGFuZCB2YXJpYW5jZSAxLg0KDQpXaGVuIHdvcmtpbmcgd2l0aCBhIHNlcXVlbmNlIG9mIHJhbmRvbSB2YXJpYWJsZXMgdGhlIGxpbWl0IHVzZWQgaW4gdGhlIHRoZW9yZW0gaXMgY2FsbGVkIHRoZSBjb252ZXJnZW5jZSBpbiBkaXN0cmlidXRpb24uIFByb2JhYmlsaXRpZXMgb2Ygc3VtcyBvZiByYW5kb20gdmFyaWFibGVzIGNhbiBvZnRlbiBiZSBhcHByb3hpbWF0ZWQgYnkgdGhvc2UgZnJvbSB0aGUgbm9ybWFsIGRpc3RyaWJ1dGlvbi4gDQoNCl9fTW9tZW50IEdlbmVyYXRpbmcgRnVuY3Rpb246X18NCg0KTUdGID0gJE1fe3h9KHopPUUoZV57elh9KSQgZm9yIGFsbCB6IGZvciB3aGljaCB0aGUgZXhwZWN0ZWQgdmFsdWUgZXhpc3RzLg0KDQpQcm9iYWJpbGl0eSBnZW5lcmF0aW5nIGZ1bmN0aW9uLCBwZ2Y9JFBfe1h9KHopPUUoel57WH0pJCBmb3IgYWxsIHogZm9yIHdoaWNoIHRoZSBleHBlY3RhdGlvbiBleGlzdHMNCg0KJE1fe3h9KHopPVBfe3h9KGVee3p9KSQgYW5kICRQX3t4fSh6KT1NX3t4fShsblwgeikkDQoNCk9mdGVuIHRoZSBtZ2YgaXMgdXNlZCBmb3IgY29udGludW91cyByYW5kb20gdmFyaWFibGVzLCBhbmQgdGhlIHBnZiBmb3IgZGlzY3JldGUgcmFuZG9tIHZhcmlhYmxlcy4gVHdvIHJhbmRvbSB2YXJpYWJsZXMgd2l0aCBkaWZmZXJlbnQgZGlzdHJpYnV0aW9uIGZ1bmN0aW9ucyBjYW5ub3QgaGF2ZSB0aGUgc2FtZSBtZ2Ygb3IgcGdmLiBUaGUgZm9sbG93aW5nIGFpZCB3b3JrcyB3aXRoIHN1bXMgb2YgcmFuZG9tIHZhcmlhYmxlcy4gVGhlcmUgaXMgYSBvbmUgdG8gb25lIGNvcnJlc3BvbmRlbmNlIGJldHdlZW4gYSByYW5kb20gdmFyaWFibGUncyBkaXN0cmlidXRpb24gZnVuY3Rpb24gYW5kIGl0cyBtZ2YgYW5kIHBnZi4NCg0KX19Db21iaW5pbmcgdGhlbSBmb3IgJFNfe2t9JDpfXw0KDQppZiAkU197a309eF97MX0rLi4uK3hfe2t9JCB3aGVyZSB4J3MgYXJlIGluZGVwZW5kZW50IGFuZCByYW5kb20gdmFyaWFibGVzIHRoZW46DQoNCiRNX3tzX3trfX0oeik9XFBpX3tqPTF9XntrfU1fe1hfe2p9fSh6KSQgYW5kICRQX3tzX3trfX0oeik9XFBpX3tqPTF9XntrfVBfe1hfe2p9fSh6KSQNCg0KJE1fe3Nfe2t9fSh6KT1FKGVee3pTX3trfX0pPUUoZV57eih4MSt4MisuLi4reF97en0pfSkkDQoNCiBfX1RhaWxzOl9fDQogDQogSWYgYWxsIHBvc2l0aXZlIG1vbWVudHMgZXhpc3QgdGhlbiBpdCBpcyBhbiBpbmRpY2F0aW9uIG9mIGEgbGlnaHQgcmlnaHQgdGFpbC4gSWYgb25seSBwb3NpdGl2ZSBtb21lbnRzIHVwIHRvIGEgY2VydGFpbiBwb2ludCBleGlzdCB0aGVuIGl0IGlzIGV2aWRlbmNlIG9mIGEgaGVhdnkgcmlnaHQgdGFpbC4gDQogDQogSWYgYSBkaXN0cmlidXRpb24gZG9lcyBub3QgaGF2ZSBhbGwgaXRzIHBvc2l0aXZlIG1vbWVudHMsIHRoZW4gaXQgZG9lcyBub3QgaGF2ZSBhIE1HRi4gSWYgYSBkaXN0cmlidXRpb24gaGFzIGFsbCBpdHMgcG9zaXRpdmUgbW9tZW50cywgaXQgc3RpbGwgbWlnaHQgbm90IGhhdmUgYSBtZ2YuIA0KDQoNCg0KVG8gY2hlY2sgd2hpY2ggZGlzdHJpYnV0aW9uIGhhcyBhIGhlYXZpZXIgdGFpbCB3aGVuIHRoZXkgaGF2ZSB0aGUgc2FtZSBtZWFuIGlzIHRvIHVzZSB0aGUgcmF0aW8gb2YgdGhlIHR3byBzdXJ2aXZhbCBmdW5jdGlvbnMgYXMgdGhleSBhcHByb2FjaCBpbmZpbml0eS4gQ2FuIGFsc28gdXNlIGRlbnNpdHkgZnVuY3Rpb25zIGluc3RlYWQgb2Ygc3Vydml2YWwgZnVuY3Rpb25zLiANCg0KRGlzdHJpYnV0aW9ucyB3aXRoIGRlY3JlYXNpbmcgaGF6YXJkIHJhdGUgZnVuY3Rpb25zIGhhdmUgaGVhdnkgdGFpbHMuIERpc3RyaWJ1dGlvbnMgd2l0aCBpbmNyZWFzaW5nIGhhemFyZCByYXRlIGZ1bmN0aW9ucyBoYXZlIGxpZ2h0IHRhaWxzLiBBIGRpc3RyaWJ1dGlvbiBoYXMgYSBsaWdodGVyIHRhaWwgdGhhbiBhbm90aGVyIGlzIGl0cyBoYXphcmQgcmF0ZSBmdW5jdGlvbiBpcyBpbmNyZWFzaW5nIGF0IGEgZmFzdGVyIHJhdGUuIA0KDQpJZiB0aGUgbWVhbiBleGNlc3MgbG9zcyBmdW5jdGlvbiBpcyBpbmNyZWFzaW5nIGluIGQsIHRoZSBkaXN0cmlidXRpb24gaXMgY29uc2lkZXJlZCBhIGhlYXZ5IHRhaWwuIElmIHRoZSBtZWFuIGV4Y2VzcyBsb3NzIGZ1bmN0aW9uIGlzIGRlY3JlYXNpbmcgaW4gZCwgaXQgaXMgY29uc2lkZXJlZCB0byBoYXZlIGEgbGlnaHQgdGFpbC4NCg0KX19NZWFzdXJlcyBvZiBSaXNrOl9fDQoNCmtleSByaXNrIGluZGljYXRvcnMtIGxldmVsIG9mIHJpc2ssIG9mdGVuIGRlc2NyaWJlZCBieSBvbmUgbnVtYmVyLg0KDQpWYWx1ZSBhdCBSaXNrIChWYVIpLSBhIHF1YW50aWxlIG9mIHRoZSBkaXN0cmlidXRpb24gb2YgYWdncmVnYXRlIGxvc3Nlcy4gDQoNClRhaWwgVmFsdWUgYXQgUmlzayAoVFZhUiktIG1vcmUgaW5mb3JtYXRpdmUgYW5kIHVzZWZ1bCBtZWFzdXJlIG9mIFZhUi4gDQoNCnJpc2sgbWVhc3VyZS0gZ2l2ZXMgYSBzaW5nbGUgbnVtYmVyIHRoYXQgaXMgaW50ZW5kZWQgdG8gcXVhbnRpZnkgdGhlIHJpc2sgZXhwb3N1cmUuIERlbm90ZWQgJFxyaG8oWCkkLiBJdCBpcyB0aGUgYW1vdW50IG9mIGFzc2V0cyByZXF1aXJlZCB0byBwcm90ZWN0IGFnYWluc3QgYWR2ZXJzZSBvdXRjb21lcyBvZiByaXNrIFguIA0KDQpDb2hlcmVudCBSaXNrIE1lYXN1cmU6IGhhcyB0aGUgZm9sbG93aW5nIHByb3BlcnRpZXMgZm9yIHR3byBsb3NzIHJhbmRvbSB2YXJpYWJsZXMNCg0KMSkgU3ViYWRkaXRpdml0eTogJFxyaG8oWCtZKVxsZSBccmhvKHgpICsgXHJobyh5KSQNCg0KMikgTW9ub3RvbmljaXR5OiBpZiBYPFkgZm9yIGFsbCBwb3NzaWJsZSBvdXRjb21lcywgdGhlbiAkXHJobyhYKVxsZSBccmhvKFkpJA0KDQozKSBQb3NpdGl2ZSBIb21vZ2VuZWl0eTogZm9yIGFueSBwb3NpdGl2ZSBjb25zdGFudCBjLCAkXHJobyhjWCk9Y1xyaG8gKFgpJA0KDQo0KSBUcmFuc2xhdGlvbiBJbnZhcmlhbmNlOiBmb3IgYW55IGNvbnN0YW50IGMsICRccmhvIChYK2MpPVxyaG8gKFgpK2MkDQoNClN1YmFkZGl0aXZpdHkgc3RhdGVzIHRoYXQgdHdvIHJpc2tzIGNvbWJpbmVkIHdpbGwgbm90IGJlIGdyZWF0ZXIgdGhhbiBmb3IgdGhlIHJpc2tzIHRyZWF0ZWQgc2VwYXJhdGVseSwgdGhlcmUgc2hvdWxkIGJlIHNvbWUgZGl2ZXJzaWZpY2F0aW9uIGJlbmVmaXQgZnJvbSBjb21iaW5pbmcgcmlza3MuIE1vbm90b25pY2l0eSBtZWFucyB0aGF0IGlmIG9uZSByaXNrIGFsd2F5cyBoYXMgZ3JlYXRlciBsb3NzZXMgdGhhbiBhbm90aGVyIHJpc2sgdW5kZXIgYWxsIGNpcmN1bXN0YW5jZXMsIHRoZSByaXNrIG1lYXN1cmUgKGNhcGl0YWwgcmVxdWlyZWQgdG8gc3VwcG9ydCBpdCkgc2hvdWxkIGFsd2F5cyBiZSBncmVhdGVyLiBQb3NpdGl2ZSBob21vZ2VuZWl0eSBtZWFucyB0aGF0IHRoZSByaXNrIG1lYXN1cmUgYW5kIGNhcGl0YWwgcmVxdWlyZWQgdG8gc3VwcG9ydCBpdCBpcyBpbmRlcGVuZGVudCBvZiB0aGUgY3VycmVuY3kgaW4gd2hpY2ggdGhlIHJpc2sgaXMgbWVhc3VyZWQuIERvdWJsaW5nIHRoZSBleHBvc3VyZSB0byBhIHBhcnRpY3VsYXIgcmlzayByZXF1aXJlcyBkb3VibGUgdGhlIGNhcGl0YWwsIG5vIGRpdmVyc2lmaWNhdGlvbiBiZW5lZml0LiBUcmFuc2xhdGlvbiBpbnZhcmlhbmNlIG1lYW5zIHRoYXQgdGhlcmUgaXMgbm8gYWRkaXRpb25hbCByaXNrIChjYXBpdGFsIHJlcXVpcmVkIHRvIHN1cHBvcnQgaXQpIGZvciBhbiBhZGRpdGlvbmFsIHJpc2sgZm9yIHdoaWNoIHRoZXJlIGlzIG5vdCBhZGRpdGlvbmFsIHVuY2VydGFpbnR5LiAgIA0KDQpWYVItIElzIG5vdCBjb2hlcmVudCBiZWNhdXNlIGl0IGRvZXMgbm90IGNvdmVyIHN1YmFkZGl0aXZpdHkuIEl0IGlzIHRoZSB0aHJlc2hvbGQgcGVyY2VudGFnZSB0aGF0IHRoZSBjb21wYW55IGNhbiBjb3ZlciBhbGwgcG9zc2libGUgbG9zZXMuIEZvciBhIDk1JSBxdWFudGlsZSBvZiBWYVIgdGhlcmUgaXMgb25seSBhIDUlIGNoYW5jZSBvZiBsb3NzZWQgZXhjZWVkaW5nIHRoZSBWYVIgdmFsdWUuDQoNClZhUiBpcyB1c2VkIGV4dGVuc2l2ZWx5IGluIGZpbmFuY2lhbCByaXNrIG1hbmFnZW1lbnQgb2YgdHJhZGluZyByaXNrIG92ZXIgYSBmaXhlZCAodXN1YWxseSByZWxhdGl2ZWx5IHNob3J0KSB0aW1lIHBlcmlvZC4gSWYgZGlzdHJpYnV0aW9ucyBvZiBnYWlucyBvciBsb3NzZXMgYXJlIHJlc3RyaWN0ZWQgdG8gdGhlIG5vcm1hbCBkaXN0cmlidXRpb24gdGhlbiBWYVIgaXMgY29oZXJlbnQuIEhvd2V2ZXIsIHRoZSBub3JtYWwgZGlzdHJpYnV0aW9uIGlzIGdlbmVyYWxseSBub3QgdXNlZCBmb3IgZGVzY3JpYmluZyBpbnN1cmFuY2UgbG9zc2VzLg0KDQpUVmFSLSBJcyBjb2hlcmVudC0gdGhlIGF2ZXJhZ2Ugb2YgYWxsIFZhUiB2YWx1ZXMgYWJvdmUgdGhlIHNlY3VyaXR5IGxldmVsIHAuDQoNCiRUVmFSX3twfShYKT1cZnJhY3tcaW50X3twfV57MX1WYVJfe3V9KFgpZHV9ezEtcH0kDQoNCm9yICRWYVJfe3B9KFgpK2UoXHBpIF97cH0pJA0KDQotJGUoXHBpIF97cH0pJCA9IG1lYW4gZXhjZXNzIGxvc3MgZnVuY3Rpb24NCg0KDQoNCg0KDQoNCg0KDQoNCg0KDQoNCg0KDQoNCg0KDQo=</div>
+<div id="rmd-source-code">LS0tDQp0aXRsZTogIlIgTm90ZWJvb2siDQpvdXRwdXQ6IGh0bWxfbm90ZWJvb2sNCi0tLQ0KDQpDaGFwdGVyIDQNCg0KTW9kZWwgc3BlY2lmaWNhdGlvbjoNCg0KTW9kZWxzIGFyZSBzcGVjaWZpZWQgYnkgaG93IG1hbnkgcGFyYW1ldGVycyBhcmUgbmVlZGVkIGZvciB0aGUgY29tcGxleGl0eSBvZiB0aGUgbW9kZWwuIA0KDQpBcmd1bWVudHMgZm9yIGEgc2ltcGxlIG1vZGVsOg0KDQp3aXRoIGZldyBpdGVtcyByZXF1aXJlZCBpbiBpdHMgc3BlY2lmaWNhdGlvbiwgaXQgaXMgbW9yZSBsaWtlbHkgdGhhdCBlYWNoIGl0ZW0gY2FuIGJlIGRldGVybWluZWQgbW9yZSBhY2N1cmF0ZWx5LiBJdCBpcyBtb3JlIGxpa2VseSB0byBiZSBzdGFibGUgYWNyb3NzIHRpbWUgYW5kIHNldHRpbmdzIChpZiBhIG1vZGVsIGRvZXMgd2VsbCB0b2RheSBpdCBpcyBsaWtlbHkgdG8gZG8gd2VsbCB0b21vcnJvdyBvciBpbiBzaW1pbGFyIHNpdHVhdGlvbikuIEEgc2ltcGxlIG1vZGVsIG1vZGVuIGNhbiBwcm92aWRlIG5lY2Vzc2FyeSBzbW9vdGhpbmcgdG8gaXJyZWd1bGFyIGRhdGEuDQoNCmNvbXBsZXggbW9kZWwgYWR2YW50YWdlczoNCg0KQSBjb21wbGV4IG1vZGVsIGNhbiBtb3JlIGNsb3NlbHkgbWF0Y2ggcmVhbGl0eS4gSXQgY2FuIG1vcmUgY2xvc2VseSBtYXRjaCBpcnJlZ3VsYXJpdGllcyBpbiB0aGUgZGF0YS4NCg0KcGFyc2ltb255LSB0aGUgc2ltcGxlc3QgbW9kZWwgdGhhdCBhZGVxdWF0ZWx5IHJlZmxlY3RzIHJlYWxpdHkgc2hvdWxkIGJlIHVzZWQuDQoNCnNjYWxlIGRpc3RyaWJ1dGlvbi0gYSBwYXJhbWV0cmljIGRpc3RyaWJ1dGlvbiBpcyBhIHNjYWxlIGRpc3RyaWJ1dGlvbiBpZiB3aGVuIGEgcmFuZG9tIHZhcmlhYmxlIGZyb20gdGhhdCBzZXQgb2YgZGlzdHJpdWJ0aW9ucyBpcyBtdWx0aXBsaWVkIGJ5IGEgcG9zaXRpdmUgY29uc3RhbnQsIHRoZSByZXN1bHRpbmcgcmFuZG9tIHZhcmlhYmxlIGlzIGFsc28gaW4gdGhhdCBzZXQgb2YgZGlzdHJpYnV0aW9ucy4gDQoNCnNjYWxlIHBhcmFtZXRlci0gd2hlbiBhIG1lbWJlciBvZiB0aGUgc2NhbGUgZGlzdHJpYnV0aW9uIGlzIG11bHRpcGxpZWQgYnkgYSBwb3NpdGl2ZSBjb25zdGFudCwgdGhlIHNjYWxlIHBhcmFtZXRlciBpcyBtdWx0aXBsaWVkIGJ5IHRoZSBzYW1lIGNvbnN0YW50LiBTZWNvbmQsIHdoZW4gYSBtZW1iZXIgb2YgdGhlIHNjYWxlIGRpc3RyaWJ1dGlvbiBpcyBtdWx0aXBsaWVkIGJ5IGEgcG9zaXRpdmUgY29uc3RhbnQsIGFsbCBvdGhlciBwYXJhbWV0ZXJzIGFyZSB1bmNoYW5nZWQuIA0KDQpfX1BhcmFtZXRyaWMgZGlzdHJpYnV0aW9uIGZhbWlseTpfXw0KDQpQYXJhbWV0cmljIGRpc3RyaWJ1dGlvbiBmYW1pbHktIGEgc2V0IG9mIHBhcmFtZXRyaWMgZGlzdHJpYnV0aW9ucyB0aGF0IGFyZSByZWxhdGVkIGluIHNvbWUgbWVhbmluZ2Z1bCB3YXkuIE9uZSB0eXBlIG9mIHBhcmFtZXRyaWMgZGlzdHJpYnV0aW9uIGZhbWlseSBpcyBiYXNlcyBvbiBhIHNwZWNpZmllZCBwYXJhbWV0cmljIGRpc3RyaWJ1dGlvbi4gT3RoZXIgdHlwZXMgYXJlIG9idGFpbmVkIGJ5IHNldHRpbmcgb25lIG9mIHRoZSBwYXJhbWV0ZXJzIGZyb20gdGhlIHNwZWNpZmllZCBkaXN0cmlidXRpb24gZXF1YWwgdG8gYSBwcmVzZXQgdmFsdWUgb3IgdG8gZWFjaCBvdGhlci4gDQoNClRyYW5zZm9ybWVkIGJldGEgZGlzdHJpYnV0aW9uLSBoYXMgZm91ciBwYXJhbWV0ZXJzLiBFYWNoIG90aGVyIG5hbWVkIGRpc3RyaWJ1dGlvbnMgaW4gdGhhdCBmYW1pbHkgaGF2ZSBjZXJ0YWluIHBhcmFtZXRlcnMgc2V0IGVxdWFsIHRvIDEgb3IgZWFjaCBvdGhlci4gDQoNCl9fRmluaXRlIE1peHR1cmUgRGlzdHJpYnV0aW9uczpfXw0KDQpNb3RpdmF0aW9uIGZvciBtaXhpbmcgaXMgdGhhdCB0aGUgdW5kZXJseWluZyBkaXN0cmlidXRpb24gbWF5IGJlIHNldmVyYWwgcGhlbm9tZW5hIHRoYXQgb2NjdXIgd2l0aCB1bmtub3duIHByb2JhYmlsaXRpZXMuIEZvciBleGFtcGxlLCBkZW50YWwgY2xhaW0gY291bGQgYmUgY2hlY2t1cCwgZmlsbGluZywgcmVwYWlyLCBvciBzdXJnaWNhbCBwcm9jZWR1cmUuIEJlY2F1c2Ugb2YgZGlmZmVyaW5nIG1vZGVzIGEgbWl4dHVyZSBtb2RlbCBjYW4gYmUgdXNlZC4NCg0KSWYgd2UgZG8gbm90IGtub3cgaG93IGRpc3RyaWJ1dGlvbiBzaG91bGQgYmUgdXNlZCBpbiB0aGUgbWl4dHVyZSwgdGhlIHZhbHVlIG9mIGsgKG51bWJlciBvZiBkaXN0cmlidXRpb25zKSBiZWNvbWVzIGEgcGFyYW1ldGVyLiBJdCBjYW4gYmUgcmVwcmVzZW50ZWQgYXMgYSB2YXJpYWJsZS1jb21wb25lbnQgbWl4dHVyZSBkaXN0cmlidXRpb24gd2hpY2ggaXMgc2VtaSBwYXJhbWV0cmljIGJlY2F1c2UgaW4gY29tcGxleGl0eSB0aGV5IGFyZSBiZXR3ZWVuIHBhcmFtZXRyaWMgYW5kIG5vbnBhcmFtZXRyaWMgbW9kZWxzLiANCg0KX19EYXRhIERlcGVuZGVudCBNb2RlbHM6X18NCg0KRGF0YSBkZXBlbmRlbnQgbW9kZWxzIGFyZSBub24tcGFyYW1ldHJpYy4gQW4gZXhhbXBsZSBpcyB0aGUgZW1waXJpY2FsIG1vZGVsIHdoZXJlIGVhY2ggb2JzZXJ2YXRpb24gY29udHJpYnV0ZWQgMS9uIHRvIHByb2JhYmlsaXR5IGZ1bmN0aW9uLg0KDQpBbm90aGVyIGV4YW1wbGUgaXMgdGhlIGtlcm5lbCBzbW9vdGhpbmcgbW9kZWwgd2hlcmUgZWFjaCBkYXRhIHBvaW50IGlzIHJlcGxhY2VkIHdpdGggYSBjb250aW51b3VzIGRlbnNpdHkgZnVuY3Rpb24gd2l0aCBhcmVhIDEvbi4gDQo=</div>
 
 
 
@@ -1981,7 +1850,7 @@ $(document).ready(function () {
 <!-- code folding -->
 <script>
 $(document).ready(function () {
-  window.initializeSourceEmbed("practiceCh1.Rmd");
+  window.initializeSourceEmbed("practiceCh2.Rmd");
   window.initializeCodeFolding("show" === "show");
 });
 </script>
